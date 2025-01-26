@@ -1,0 +1,80 @@
+\documentclass[a4paper,12pt]{report}
+
+% パッケージ
+\usepackage{amsmath}  % 数学表現
+\usepackage{graphicx} % 画像挿入
+\usepackage{hyperref} % ハイパーリンク
+\usepackage{geometry} % レイアウト調整
+\usepackage{fancyhdr} % ヘッダーとフッター
+
+% ページレイアウト
+\geometry{
+    top=30mm,
+    bottom=30mm,
+    left=25mm,
+    right=25mm
+}
+
+% ヘッダーとフッターの設定
+\pagestyle{fancy}
+\fancyhead[L]{}
+\fancyhead[C]{\leftmark}
+\fancyhead[R]{\thepage}
+\fancyfoot[L]{}
+\fancyfoot[C]{}
+\fancyfoot[R]{}
+
+% タイトル情報
+\title{レポートタイトル}
+\author{著者名}
+\date{\today}
+
+\begin{document}
+
+% タイトルページ
+\maketitle
+
+% 目次
+\tableofcontents
+\newpage
+
+% 章1
+\chapter{はじめに}
+ここではレポートの背景や目的について説明します。
+
+% 章2
+\chapter{理論背景}
+ここでは理論的な背景や関連する研究について説明します。
+
+% セクション
+\section{数式例}
+以下に数式の例を示します。
+\begin{equation}
+    E = mc^2
+\end{equation}
+
+% 図の挿入
+\section{図の挿入}
+図\ref{fig:example}に例を示します。
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{example-image}
+    \caption{例の図}
+    \label{fig:example}
+\end{figure}
+
+% 章3
+\chapter{実験結果}
+ここでは実験結果について記述します。
+
+% 章4
+\chapter{結論}
+ここではレポートの結論と今後の展望について述べます。
+
+% 参考文献
+\chapter*{参考文献}
+\addcontentsline{toc}{chapter}{参考文献}
+\bibliographystyle{unsrt}
+\bibliography{references}
+
+\end{document}

@@ -1,0 +1,81 @@
+\documentclass[12pt, dvipdfmx]{article}
+%                   ^NOTE!If remove this, Figure not found would occur.
+%=== Fonts
+%---Helvetica
+%\usepackage[scaled]{helvet}
+%\renewcommand\familydefault{\sfdefault}
+%\usepackage[T1]{fontenc}
+%---
+%\usepackage{newtxtext} % Times font
+%\usepackage{mathpazo}  % Euler font? for math
+
+%=== For revise
+\usepackage{color}
+\usepackage{ulem}
+\newcommand{\Add}[1]{\textcolor{red}{#1}}
+\newcommand{\Erase}[1]{\textcolor{red}{\sout{\textcolor{black}{#1}}}}
+
+%==
+\usepackage{bm}
+\usepackage{tcolorbox}
+\usepackage{graphicx}
+
+%---Words in Definition, theorem, proof are written as non italic.
+\usepackage{amsthm, amsmath, amssymb} 
+\usepackage{physics}
+
+\theoremstyle{definition} %unable italic font in the following environment.
+\newtheorem{dfn}{Definition}[section]
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{prop}{Proposition}[section]
+\newtheorem{lem}{Lemma}[section]
+\newtheorem{cor}{Corollary}[section]
+\newtheorem{ex}{Example}[section]
+\newtheorem{exe}{Exercise}[section]
+\newtheorem{property}{Property}[section]
+\newtheorem{fact}{Fact}[section]
+\newtheorem{result}{Result}[section]
+\newtheorem{req}{Requirement}[section]
+\newtheorem{derivation}{Derivation}[section]
+
+\theoremstyle{remark}
+\newtheorem*{rem}{Remark}
+
+%===mdframe
+\usepackage{mdframed}
+\surroundwithmdframed[
+    linewidth = 2pt,
+    linecolor = gray!40,
+    topline = false,
+    bottomline = false,
+    rightline = false,
+    innerrightmargin=0pt
+]{thm}
+
+\surroundwithmdframed[
+    linewidth = 2pt,
+    linecolor = gray!40,
+    topline = false,
+    bottomline = false,
+    rightline = false,
+    innerrightmargin=0pt
+]{dfn}
+
+%===
+\begin{document}
+
+%===
+\title{Report}
+\author{Shinji Iida}
+\date{\today}
+\maketitle
+\sloppy
+
+%\tableofcontents
+%===
+\section*{Preface}
+%test~\cite{Ikebe2016-sg}
+%
+%\bibliographystyle{unsrt} 
+%\bibliography{../paperpile.bib}
+\end{document}

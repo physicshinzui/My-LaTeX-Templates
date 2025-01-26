@@ -1,0 +1,248 @@
+\documentclass[12pt,dvipdfmx]{article}
+
+%===
+%\usepackage{newtxtext} %times font
+%\usepackage{mathpazo}    % or \usepackage{mathptmx} for Times-like
+
+\usepackage{bm}
+
+% For tcolorbox theorem environment
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable,skins,theorems}
+
+\usepackage{graphicx}
+\usepackage{cite} % show not [1,2,3] but [1-3]
+
+% 
+\usepackage{geometry}
+\geometry{
+    top=30mm,
+    bottom=30mm,
+    left=25mm,
+    right=25mm
+}
+
+%=== For revise
+\usepackage{color}
+%\usepackage{todonotes}
+\usepackage{ulem}
+\newcommand{\Add}[1]{\textcolor{red}{#1}}
+\newcommand{\Erase}[1]{\textcolor{red}{\sout{\textcolor{black}{#1}}}}
+
+%---Words in Definition, theorem, proof are written as non-italic.
+\usepackage{amsthm,amsmath,amssymb}
+\usepackage{physics}
+
+\theoremstyle{definition} % non-italic body text in the following environment
+
+%\newtheorem{dfn}{Definition}[section]
+%\newtheorem{thm}{Theorem}[section]
+%\newtheorem{prop}{Proposition}[section]
+%\newtheorem{lem}{Lemma}[section]
+%\newtheorem{cor}{Corollary}[section]
+\newtheorem{ex}{Example}[section]
+\newtheorem{exe}{Exercise}[section]
+\newtheorem{property}{Property}[section]
+\newtheorem{rem}{Remark}[section]
+\newtheorem{fact}{Fact}[section]
+%\newtheorem{res}{Result}[section]
+%\newtheorem{req}{Requirement}[section]
+
+
+% @@@@@@NOTE@@@@@@
+% `auto counter` is necessary to show theorem number via \ref properly!
+% --------------------- Theorem ---------------------
+\newtcbtheorem[auto counter,number within=section]{thmBox}{Theorem}{enhanced,
+    attach boxed title to top left={xshift=5mm,yshift=-3mm},
+    boxed title style={colframe=black!35!black, colback=white},
+    coltitle=black,
+    colback=white,
+    colframe=black!35!black,
+    fonttitle=\bfseries,
+    breakable=true,
+    top=4mm,
+}{thm}
+
+\newenvironment{thm}[2][]{%
+  \begin{thmBox}[#1]{#2}{}%
+}{%
+  \end{thmBox}
+}
+
+% --------------------- Definition ---------------------
+\newtcbtheorem[auto counter,number within=section]{dfnBox}{Definition}{enhanced,
+    attach boxed title to top left={xshift=5mm,yshift=-3mm},
+    boxed title style={colframe=black!35!black, colback=white},
+    coltitle=black,
+    colback=white,
+    colframe=black!35!black,
+    fonttitle=\bfseries,
+    breakable=true,
+    top=4mm
+}{dfn}
+
+\newenvironment{dfn}[2][]{
+  \begin{dfnBox}[#1]{#2}{}
+}{
+  \end{dfnBox}
+}
+
+% --------------------- Proposition ---------------------
+\newtcbtheorem[auto counter,number within=section]{propBox}{Proposition}{enhanced,
+    attach boxed title to top left={xshift=5mm,yshift=-3mm},
+    boxed title style={colframe=black!35!black, colback=white},
+    coltitle=black,
+    colback=white,
+    colframe=black!35!black,
+    fonttitle=\bfseries,
+    breakable=true,
+    top=4mm
+}{prop}
+
+\newenvironment{prop}[2][]{
+  \begin{propBox}[#1]{#2}{}
+}{
+  \end{propBox}
+}
+
+% --------------------- Lemma ---------------------
+\newtcbtheorem[auto counter,number within=section]{lemBox}{Lemma}{enhanced,
+    attach boxed title to top left={xshift=5mm,yshift=-3mm},
+    boxed title style={colframe=black!35!black, colback=white},
+    coltitle=black,
+    colback=white,
+    colframe=black!35!black,
+    fonttitle=\bfseries,
+    breakable=true,
+    top=4mm
+}{lem}
+
+\newenvironment{lem}[2][]{
+  \begin{lemBox}[#1]{#2}{}
+}{
+  \end{lemBox}
+}
+
+% --------------------- Corollary ---------------------
+\newtcbtheorem[auto counter,number within=section]{corBox}{Corollary}{enhanced,
+    attach boxed title to top left={xshift=5mm,yshift=-3mm},
+    boxed title style={colframe=black!35!black, colback=white},
+    coltitle=black,
+    colback=white,
+    colframe=black!35!black,
+    fonttitle=\bfseries,
+    breakable=true,
+    top=4mm
+}{cor}
+
+\newenvironment{cor}[2][]{
+  \begin{corBox}[#1]{#2}{}
+}{
+  \end{corBox}
+}
+
+% --------------------- Requirement ---------------------
+\newtcbtheorem[auto counter,number within=section]{reqBox}{Requirement}{enhanced,
+    attach boxed title to top left={xshift=5mm,yshift=-3mm},
+    boxed title style={colframe=black!35!black, colback=white},
+    coltitle=black,
+    colback=white,
+    colframe=black!35!black,
+    fonttitle=\bfseries,
+    breakable=true,
+    top=4mm
+}{req}
+
+\newenvironment{req}[2][]{
+  \begin{reqBox}[#1]{#2}{}
+}{
+  \end{reqBox}
+}
+
+% --------------------- Result ---------------------
+\newtcbtheorem[auto counter,number within=section]{resBox}{Result}{enhanced,
+    attach boxed title to top left={xshift=5mm,yshift=-3mm},
+    boxed title style={colframe=black!35!black, colback=white},
+    coltitle=black,
+    colback=white,
+    colframe=black!35!black,
+    fonttitle=\bfseries,
+    breakable=true,
+    top=4mm
+}{res}
+
+\newenvironment{res}[2][]{
+  \begin{resBox}[#1]{#2}{}
+}{
+  \end{resBox}
+}
+
+
+% ================================================================
+\title{English Document Template}
+\author{Shinji Iida}
+\date{\today}
+% ================================================================
+
+\begin{document}
+\maketitle
+
+\tableofcontents
+
+\section{Section}
+\subsection{A}
+
+\begin{thm}[label={thm1}]{Theorem Title}
+This is a theorem statement.
+\end{thm}
+We refer to Theorem~\ref{thm1} like this.
+
+\begin{cor}{}
+This is a corollary.
+\end{cor}
+
+\begin{thm}[label={thm2}]{}
+You can also omit the title here.
+\end{thm}
+
+We cite references as in~\cite{Iida2023-sl,Iida2022-qt,Iida2019-xh}.  
+You may also cite other references like~\cite{2023-xn}.
+
+\begin{dfn}{Definition Title}
+This is a definition.
+\begin{equation}
+  y = ax
+\end{equation}
+\end{dfn}
+
+\begin{ex}
+This is an example.
+\end{ex}
+
+\section{B}
+
+\begin{lem}{Lemma Title}{}
+This is a lemma statement.
+\end{lem}
+
+\begin{prop}{Proposition Title}{}
+This is a proposition statement.
+\end{prop}
+
+\section{Figure Insertion}
+See Figure~\ref{fig:example} for an example.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{example-image}
+    \caption{Example Figure}
+    \label{fig:example}
+\end{figure}
+
+
+%\bibliography{../paperpile.bib}
+
+\addcontentsline{toc}{chapter}{References}
+\bibliographystyle{unsrt}
+\bibliography{references}
+
+\end{document}

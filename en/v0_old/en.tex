@@ -1,0 +1,146 @@
+\documentclass[12pt,dvipdfmx]{article}
+%                   ^NOTE!If remove this, Figure not found would occur.
+%=== Fonts
+%---Helvetica
+%\usepackage[scaled]{helvet}
+%\renewcommand\familydefault{\sfdefault}
+%\usepackage[T1]{fontenc}
+%---
+%\usepackage{newtxtext} % Times font
+%\usepackage{mathpazo}  % Euler font? for math
+
+%=== For revise
+\usepackage{color}
+\usepackage{ulem}
+\newcommand{\Add}[1]{\textcolor{red}{#1}}
+\newcommand{\Erase}[1]{\textcolor{red}{\sout{\textcolor{black}{#1}}}}
+
+%==
+% For tcolorbox theorem environment
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable, skins, theorems}
+\usepackage{graphicx}
+
+%---Words in Definition, theorem, proof are written as non italic.
+\usepackage{amsthm, amsmath, amssymb} 
+\usepackage{physics}
+\usepackage{bm}
+
+\theoremstyle{definition} %unable italic font in the following environment.
+%\newtheorem{dfn}{Definition}[section]
+%\newtheorem{thm}{Theorem}[section]
+%\newtheorem{prop}{Proposition}[section]
+%\newtheorem{lem}{Lemma}[section]
+%\newtheorem{cor}{System}[section]
+\newtheorem{ex}{Example}[section]
+\newtheorem{exe}{Exercise}[section]
+\newtheorem{property}{Property}[section]
+\newtheorem{fact}{Fact}[section]
+\newtheorem{result}{Result}[section]
+\newtheorem{req}{Requirement}[section]
+\newtheorem{derivation}{Derivation}[section]
+
+\theoremstyle{remark}
+\newtheorem*{rem}{Remark}
+
+\newtcbtheorem[auto counter,number within=section]{thm}{Theorem}{enhanced,
+    attach boxed title to top left = {xshift=5mm,yshift=-3mm},
+    boxed title style = {colframe = black!35!black, colback = white},
+    coltitle = black,
+    colback = white,
+    colframe = black!35!black,
+    fonttitle = \bfseries,
+    breakable = true,
+    top = 4mm
+}{thm}
+
+\newtcbtheorem[auto counter,number within=section]{dfn}{Definition}{enhanced,
+    attach boxed title to top left = {xshift=5mm,yshift=-3mm},
+    boxed title style = {colframe = black!35!black, colback = white},
+    coltitle = black,
+    colback = white,
+    colframe = black!35!black,
+    fonttitle = \bfseries,
+    breakable = true,
+    top = 4mm
+}{dfn}
+
+\newtcbtheorem[auto counter,number within=section]{prop}{Proposition}{enhanced,
+    attach boxed title to top left = {xshift=5mm,yshift=-3mm},
+    boxed title style = {colframe = black!35!black, colback = white},
+    coltitle = black,
+    colback = white,
+    colframe = black!35!black,
+    fonttitle = \bfseries,
+    breakable = true,
+    top = 4mm
+}{prop}
+
+\newtcbtheorem[auto counter,number within=section]{lem}{Lemma}{enhanced,
+    attach boxed title to top left = {xshift=5mm,yshift=-3mm},
+    boxed title style = {colframe = black!35!black, colback = white},
+    coltitle = black,
+    colback = white,
+    colframe = black!35!black,
+    fonttitle = \bfseries,
+    breakable = true,
+    top = 4mm
+}{lem}
+
+\newtcbtheorem[auto counter,number within=section]{cor}{corollary}{enhanced,
+    attach boxed title to top left = {xshift=5mm,yshift=-3mm},
+    boxed title style = {colframe = black!35!black, colback = white},
+    coltitle = black,
+    colback = white,
+    colframe = black!35!black,
+    fonttitle = \bfseries,
+    breakable = true,
+    top = 4mm
+}{cor}
+
+
+%===
+\begin{document}
+
+%===
+\title{English version template}
+\author{Shinji Iida}
+\date{\today}
+\maketitle
+
+%\tableofcontents
+%===
+
+\section{Section 1}
+%
+
+\begin{thm}[label=thm]{}{}
+hi
+\end{thm}
+Theorem \ref{thm} can be referenced like this.
+
+\begin{dfn}{This is a definition}{}
+\begin{equation}
+y  = ax
+\end{equation}
+\end{dfn}
+
+% \begin{rem}
+%     This is a remark\cite{}.
+% \end{rem}
+
+\section{Section 2}
+\begin{thm}{Cayley--Hamilton theorem}{}
+Let $F_{A}(t)$ be the characteristic polynomial of a n-by-n matrix $A$. Then,
+\begin{equation}
+F_{A}(A)=O_{n}
+\end{equation}
+
+\end{thm}
+
+
+%===References from bib file
+%\bibliographystyle{plain}
+%\bibliography{bibfile}
+
+\end{document}

@@ -1,0 +1,243 @@
+\documentclass[12pt,dvipdfmx]{jlreq}
+
+%===
+%\usepackage{newtxtext} %times font
+%\usepackage{mathpazo}
+\usepackage{bm}
+
+% For tcolorbox theorem environment
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable, skins, theorems}
+
+\usepackage{graphicx}
+\usepackage{cite} % show not [1,2,3] but [1-3]
+ 
+
+\usepackage{geometry}
+\geometry{
+    top=30mm,
+    bottom=30mm,
+    left=25mm,
+    right=25mm
+}
+
+
+%=== For revise
+\usepackage{color}
+%\usepackage{todonotes}
+\usepackage{ulem}
+\newcommand{\Add}[1]{\textcolor{red}{#1}}
+\newcommand{\Erase}[1]{\textcolor{red}{\sout{\textcolor{black}{#1}}}}
+
+%---Words in Definition, theorem, proof are written as non italic.
+\usepackage{amsthm, amsmath, amssymb} 
+\usepackage{physics}
+
+\theoremstyle{definition} %unable italic font in the following environment.
+%\newtheorem{dfn}{定義}[section]
+%\newtheorem{thm}{定理}[section]
+%\newtheorem{prop}{命題}[section]
+%\newtheorem{lem}{補題}[section]
+%\newtheorem{cor}{系}[section]
+\newtheorem{ex}{例}[section]
+\newtheorem{exe}{問題}[section]
+\newtheorem{property}{性質}[section]
+\newtheorem{rem}{注意}[section]
+\newtheorem{fact}{観測事実}[section]
+%\newtheorem{res}{結果}[section]
+%\newtheorem{req}{要請}[section]
+
+% @@@@@@NOTE@@@@@@
+% `auto counter` is necessary to show theorem number via \ref properly!
+\newtcbtheorem[auto counter,number within=section]{thmBox}{定理}{enhanced,
+    attach boxed title to top left = {xshift=5mm,yshift=-3mm},
+    boxed title style = {colframe = black!35!black, colback = white},
+    coltitle = black,
+    colback = white,
+    colframe = black!35!black,
+    fonttitle = \bfseries,
+    breakable = true,
+    top = 4mm,
+}{thm}
+
+\newenvironment{thm}[2][]{%
+  % optional引数[#1]: たとえば label={thm1} など
+  % mandatory引数 {#2}: 定理のタイトル
+  \begin{thmBox}[#1]{#2}{}%
+}{%
+  \end{thmBox}
+}
+
+\newtcbtheorem[auto counter,number within=section, ]{dfnBox}{定義}{enhanced,
+    attach boxed title to top left = {xshift=5mm,yshift=-3mm},
+    boxed title style = {colframe = black!35!black, colback = white},
+    coltitle = black,
+    colback = white,
+    colframe = black!35!black,
+    fonttitle = \bfseries,
+    breakable = true,
+    top = 4mm
+}{dfn}
+
+\newenvironment{dfn}[2][]{
+  \begin{dfnBox}[#1]{#2}{}
+}{
+  \end{dfnBox}
+}
+
+\newtcbtheorem[auto counter,number within=section, ]{propBox}{命題}{enhanced,
+    attach boxed title to top left = {xshift=5mm,yshift=-3mm},
+    boxed title style = {colframe = black!35!black, colback = white},
+    coltitle = black,
+    colback = white,
+    colframe = black!35!black,
+    fonttitle = \bfseries,
+    breakable = true,
+    top = 4mm
+}{prop}
+
+\newenvironment{prop}[2][]{
+  \begin{propBox}[#1]{#2}{}
+}{
+  \end{propBox}
+}
+
+\newtcbtheorem[auto counter,number within=section, ]{lemBox}{補題}{enhanced,
+    attach boxed title to top left = {xshift=5mm,yshift=-3mm},
+    boxed title style = {colframe = black!35!black, colback = white},
+    coltitle = black,
+    colback = white,
+    colframe = black!35!black,
+    fonttitle = \bfseries,
+    breakable = true,
+    top = 4mm
+}{lem}
+
+\newenvironment{lem}[2][]{
+  \begin{lemBox}[#1]{#2}{}
+}{
+  \end{lemBox}
+}
+
+
+\newtcbtheorem[auto counter,number within=section, ]{corBox}{系}{enhanced,
+    attach boxed title to top left = {xshift=5mm,yshift=-3mm},
+    boxed title style = {colframe = black!35!black, colback = white},
+    coltitle = black,
+    colback = white,
+    colframe = black!35!black,
+    fonttitle = \bfseries,
+    breakable = true,
+    top = 4mm
+}{cor}
+
+\newenvironment{cor}[2][]{
+  \begin{corBox}[#1]{#2}{}
+}{
+  \end{corBox}
+}
+
+
+\newtcbtheorem[auto counter,number within=section, ]{reqBox}{要請}{enhanced,
+    attach boxed title to top left = {xshift=5mm,yshift=-3mm},
+    boxed title style = {colframe = black!35!black, colback = white},
+    coltitle = black,
+    colback = white,
+    colframe = black!35!black,
+    fonttitle = \bfseries,
+    breakable = true,
+    top = 4mm
+}{req}
+
+\newenvironment{req}[2][]{
+  \begin{reqBox}[#1]{#2}{}
+}{
+  \end{reqBox}
+}
+
+
+\newtcbtheorem[auto counter,number within=section, ]{resBox}{結果}{enhanced,
+    attach boxed title to top left = {xshift=5mm,yshift=-3mm},
+    boxed title style = {colframe = black!35!black, colback = white},
+    coltitle = black,
+    colback = white,
+    colframe = black!35!black,
+    fonttitle = \bfseries,
+    breakable = true,
+    top = 4mm
+}{res}
+
+\newenvironment{res}[2][]{
+  \begin{resBox}[#1]{#2}{}
+}{
+  \end{resBox}
+}
+
+
+\title{日本語文章テンプレ}
+\author{Shinji Iida}
+\date{\today}
+
+% ================================================================
+\begin{document}
+\maketitle
+
+\tableofcontents
+
+\section{Section}
+\subsection{A}
+\begin{thm}[label={thm1}]{定理名}
+This is a theorem. これは定理です。
+\end{thm}
+定理\ref{thm1}はこのように参照します．
+\begin{cor}{}
+This is a corollary.
+\end{cor}
+
+\begin{thm}[label={thm1}]{}
+Theorem name can be ignored.
+\end{thm}
+参考文献はこのように参照します~\cite{Iida2023-sl,Iida2022-qt,Iida2019-xh}。
+日本語の参考文献もこのように引用可能です~\cite{2023-xn}。
+
+
+\begin{dfn}{定義名}
+これは定義です。
+\begin{equation}
+y = ax 
+\end{equation}
+\end{dfn}
+
+\begin{ex}
+This is an example.
+\end{ex}
+
+\section{B}
+\begin{lem}{補題名}{}
+これは補題です。
+\end{lem}
+
+\begin{prop}{命題名}{}
+これは命題です。
+\end{prop}
+
+
+
+\section{図の挿入}
+図\ref{fig:example}に例を示します。
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{example-image}
+    \caption{例の図}
+    \label{fig:example}
+\end{figure}
+
+
+%\bibliographystyle{junsrt} % to show references in a latex in Japanese.
+%\bibliography{../paperpile.bib}
+
+\addcontentsline{toc}{chapter}{参考文献}
+\bibliographystyle{unsrt}
+\bibliography{references}
+
+\end{document}

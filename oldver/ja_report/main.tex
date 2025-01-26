@@ -1,0 +1,113 @@
+\documentclass[12pt,dvipdfmx]{jlreq}
+
+%===
+%\usepackage{newtxtext} %times font
+%\usepackage{mathpazo}
+\usepackage{bm}
+\usepackage{tcolorbox}
+\usepackage{graphicx}
+\usepackage{cite} % show not [1,2,3] but [1-3]
+
+%=== For revise
+\usepackage{color}
+\usepackage{todonotes}
+\usepackage{ulem}
+\newcommand{\Add}[1]{\textcolor{red}{#1}}
+\newcommand{\Erase}[1]{\textcolor{red}{\sout{\textcolor{black}{#1}}}}
+
+%=== Frame env 
+\usepackage{framed}
+\usepackage{ascmac}
+\usepackage{ulem}
+
+%---Words in Definition, theorem, proof are written as non italic.
+\usepackage{amsthm, amsmath, amssymb} 
+\usepackage{physics}
+
+\theoremstyle{definition} %unable italic font in the following environment.
+\newtheorem{dfn}{定義}[section]
+\newtheorem{thm}{定理}[section]
+\newtheorem{prop}{命題}[section]
+\newtheorem{lem}{補題}[section]
+\newtheorem{cor}{系}[section]
+\newtheorem{ex}{例}[section]
+\newtheorem{exe}{問題}[section]
+\newtheorem{property}{性質}[section]
+\newtheorem{rem}{注意}[section]
+\newtheorem{fact}{観測事実}[section]
+\newtheorem{res}{結果}[section]
+\newtheorem{req}{要請}[section]
+
+%===mdframe
+\usepackage{mdframed}
+\surroundwithmdframed[
+    linewidth = 1pt,
+    linecolor = gray!40,
+    topline = true,
+    bottomline = true,
+    rightline = true,
+    skipabove=\baselineskip,
+]{thm}
+
+\surroundwithmdframed[
+    linewidth = 1pt,
+    linecolor = gray!40,
+    topline = true,
+    bottomline = true,
+    rightline = true,
+    skipabove=\baselineskip,
+]{dfn}
+
+\surroundwithmdframed[
+    linewidth = 2pt,
+    linecolor = gray!40,
+    topline = true,
+    bottomline = true,
+    rightline = true,
+]{lem}
+
+\surroundwithmdframed[
+    linewidth = 2pt,
+    linecolor = gray!40,
+    topline = true,
+    bottomline = true,
+    rightline = true,
+]{cor}
+
+\surroundwithmdframed[
+    linewidth = 2pt,
+    linecolor = gray!40,
+    topline = true,
+    bottomline = true,
+    rightline = true,
+]{res}
+
+\title{日本語文章テンプレ}
+\author{Shinji Iida}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+%\tableofcontents
+
+\begin{thm}[定理です]
+テスト
+\end{thm}
+
+ 定義も同様に表示できます：
+ \begin{dfn}
+ これは定義です。
+ \end{dfn}
+
+ 参考文献はこのように参照します~\cite{Iida2023-sl,Iida2022-qt,Iida2019-xh}。
+ 日本語の参考文献もこのように引用可能です~\cite{2023-xn}。
+%\begin{definition}[New definition]
+%これは定義です。
+%\end{definition}
+
+\bibliographystyle{junsrt} % to show references in a latex in Japanese.
+\bibliography{../paperpile.bib}
+
+
+\end{document}

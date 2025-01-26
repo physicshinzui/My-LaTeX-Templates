@@ -1,0 +1,30 @@
+\begin{thebibliography}{1}
+
+\bibitem{Iida2023-sl}
+Shinji Iida and Tomoshi Kameda.
+\newblock Dissociation rate calculation via {Constant-Force} steered molecular
+  dynamics simulation.
+\newblock {\em J. Chem. Inf. Model.}, Vol.~63, No.~11, pp. 3369--3376, June
+  2023.
+
+\bibitem{Iida2022-qt}
+Shinji Iida and Kameda Tomoshi.
+\newblock Free energy and kinetic rate calculation via non-equilibrium
+  molecular simulation: application to biomolecules.
+\newblock {\em Biophys. Rev.}, Vol.~14, No.~6, pp. 1303--1314, December 2022.
+
+\bibitem{Iida2019-xh}
+Shinji Iida, Takeshi Kawabata, Kota Kasahara, Haruki Nakamura, and Junichi
+  Higo.
+\newblock Multimodal structural distribution of the p53 {C-Terminal} domain
+  upon binding to {S100B} via a generalized ensemble method: From disorder to
+  extradisorder.
+\newblock {\em J. Chem. Theory Comput.}, Vol.~15, No.~4, pp. 2597--2607, April
+  2019.
+
+\bibitem{2023-xn}
+{岡野原大輔}.
+\newblock 拡散モデル データ生成技術の数理.
+\newblock 岩波書店, February 2023.
+
+\end{thebibliography}
