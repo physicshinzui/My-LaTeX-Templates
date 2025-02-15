@@ -1,5 +1,4 @@
-# My LaTeX templates 
-
+# My LaTeX Templates 
 
 
 # Licence 
