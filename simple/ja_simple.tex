@@ -1,0 +1,109 @@
+\documentclass[12pt,dvipdfmx]{jlreq} % 日本語対応
+
+% === authors' affilication ===
+\usepackage{authblk}  
+
+% === 画像処理 ===
+\usepackage{graphicx}
+
+% === Citation（和文対応） ===
+\usepackage[numbers]{natbib}  % 日本語文書では natbib を推奨
+
+% === ページ余白設定（日本語向け調整） ===
+\usepackage{geometry}
+\geometry{
+    tmargin=20mm,  % 上の余白
+    bmargin=30mm,  % 下の余白
+    lmargin=25mm,  % 左の余白
+    rmargin=25mm   % 右の余白
+}
+
+% === 文字装飾（修正用） ===
+\usepackage{xcolor}
+\usepackage[normalem]{ulem}  % \sout{}, \uline{}, \uwave{}
+
+% === 修正用マクロ ===
+\newcommand{\Add}[1]{\textcolor{red}{#1}}     % 追加
+\newcommand{\Erase}[1]{\textcolor{red}{\sout{#1}}} % 削除
+\newcommand{\Comment}[1]{\textcolor{blue}{#1}} % コメント
+\usepackage[colorinlistoftodos]{todonotes}
+
+% === 数式環境 ===
+\usepackage{amsthm,amsmath,amssymb}
+\usepackage{bm}
+\usepackage{cancel}  % 数式の取り消し線
+\usepackage{physics}
+
+% === 定理環境（和文表記） ===
+\theoremstyle{definition}
+\newtheorem{dfn}{定義}
+\newtheorem{thm}{定理}
+\newtheorem{prop}{命題}
+\newtheorem{lem}{補題}
+\newtheorem{cor}{系}
+\newtheorem{ex}{例}
+\newtheorem{exe}{演習}
+\newtheorem{property}{性質}
+\newtheorem{rem}{注意}
+\newtheorem{fact}{事実}
+\newtheorem{res}{結果}
+\newtheorem{req}{要請}
+
+% ================================================================
+\title{日本語テンプレート}
+\author[1]{アリス}
+\author[1,2]{ボブ}
+\affil[1]{XXX大学}
+\affil[2]{YYY大学}
+\date{\empty}
+\setcounter{Maxaffil}{0}
+\renewcommand\Affilfont{\itshape\small}
+% ================================================================
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+この論文の概要を記述する。研究の課題、方法、結果、結論を簡潔に述べる。
+\end{abstract}
+
+\section*{序論}
+池辺らは...\cite{Ikebe2016-sg}
+
+\begin{dfn}[コーシー列]
+任意の $\epsilon > 0$ に対し、ある $n_0 \in \mathbb{N}$ が存在して、
+任意の $m, n \geq n_0 \ (m,n \in \mathbb{N})$ に対し、
+\[
+\lvert a_m  - a_n  \rvert < \epsilon
+\]
+が成り立つとき、数列 $\{a_n\}$ は **コーシー列** という。
+\end{dfn}	
+
+\begin{thm}[アルキメデスの公理]
+任意の $a, b \in \mathbb{R}$ で $a > 0$ に対し、ある $N \in \mathbb{N}$ が存在して
+\[
+Na > b
+\]
+を満たす。
+\end{thm}
+
+\begin{align}
+y=ax
+\end{align}
+
+\begin{figure}[htbp]
+    \centering
+    \framebox(120,100){} 
+    \caption{ダミー図}
+    \label{fig:dummy}
+\end{figure}
+
+\subsection*{謝辞}
+本研究の遂行にあたり、XXX氏に感謝する。
+
+%=== 参考文献 === 
+\bibliographystyle{unsrt} % 文献の並び順
+\bibliography{../paperpile.bib} % BibTeX 参照
+
+\end{document}
+

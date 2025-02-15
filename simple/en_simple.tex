@@ -1,0 +1,101 @@
+\documentclass[12pt,dvipdfmx]{article}
+%===font
+%\usepackage{mathpazo}    % or \usepackage{mathptmx} for Times-like
+
+% === authors' affilication ===
+\usepackage{authblk} % 
+% =====================
+
+\usepackage{graphicx}
+% === Citation ===
+\usepackage{cite} % show not [1,2,3] but [1-3]
+
+%===
+\usepackage{geometry}
+\geometry{
+    top=10mm,
+    bottom=30mm,
+    left=25mm,
+    right=25mm
+}
+
+\usepackage{xcolor}
+
+\usepackage[normalem]{ulem}
+%Usage: \sout{}, \uline{}, \uwave{}
+
+%=== Revise ===
+\newcommand{\Add}[1]{\textcolor{red}{#1}}     % 追加
+\newcommand{\Erase}[1]{\textcolor{red}{\sout{#1}}} % 削除
+\newcommand{\Comment}[1]{\textcolor{blue}{#1}} % コメント
+\usepackage[colorinlistoftodos]{todonotes}
+%============
+
+%---Words in Definition, theorem, proof are written as non-italic.
+\usepackage{amsthm,amsmath,amssymb}
+\usepackage{bm}
+\usepackage{cancel}  % in equation mode, use xcancel{}
+\usepackage{physics}
+\theoremstyle{definition} % non-italic body text in the following environment
+\newtheorem{dfn}{Definition}
+\newtheorem{thm}{Theorem}
+\newtheorem{prop}{Proposition}
+\newtheorem{lem}{Lemma}
+\newtheorem{cor}{Corollary}
+\newtheorem{ex}{Example}
+\newtheorem{exe}{Exercise}
+\newtheorem{property}{Property}
+\newtheorem{rem}{Remark}
+\newtheorem{fact}{Fact}
+\newtheorem{res}{Result}
+\newtheorem{req}{Requirement}
+
+% ================================================================
+\title{Simple Template}
+\author[1]{Shinji Iida}
+\author[1,2]{Bob}
+\affil[1]{XXX University}
+\affil[2]{YYY Univerisity}
+\date{\empty}
+\setcounter{Maxaffil}{0}
+\renewcommand\Affilfont{\itshape\small}
+% ================================================================
+
+\begin{document}
+\maketitle
+\begin{abstract}
+This is the abstract of the paper. It provides a brief summary of the research, including the problem, methods, results, and conclusions.
+\end{abstract}
+
+\section*{Introduction}
+Ikebe et al. conducted...\cite{Ikebe2016-sg}
+
+\begin{dfn}[Cauchy sequence]
+For every $\epsilon > 0$, there exists $n_0 \in \mathbb{N}$ such that for every $m, n \ge n_0 \ (m,n \in \mathbb{N}),  \lvert a_m  - a_n  \rvert < \epsilon $.
+\end{dfn}	
+
+\begin{thm}[Archimedes axiom]
+For every $a, b \in \mathbb{R}$ and $a > 0$, there exists $N \in \mathbb{N}$ such that $Na > b$.
+\end{thm}
+
+\begin{align}
+y=ax
+\end{align}
+
+\begin{figure}[htbp]
+    \centering
+    \framebox(120,100){} 
+    \caption{Dummy figure}
+    \label{fig:dummy}
+\end{figure}
+
+\subsection*{Acknowledgements}
+
+%=== Reference === 
+\bibliography{../paperpile.bib}
+
+%\addcontentsline{toc}{chapter}{References}
+\bibliographystyle{unsrt}
+%\bibliography{references}
+
+\end{document}
