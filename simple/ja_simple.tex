@@ -1,5 +1,8 @@
 \documentclass[12pt,dvipdfmx]{jlreq} % 日本語対応
 
+%====Miscs====
+\usepackage{url}
+
 % === authors' affilication ===
 \usepackage{authblk}  
 
@@ -27,6 +30,13 @@
 \newcommand{\Erase}[1]{\textcolor{red}{\sout{#1}}} % 削除
 \newcommand{\Comment}[1]{\textcolor{blue}{#1}} % コメント
 \usepackage[colorinlistoftodos]{todonotes}
+
+%===Algorithm Environment===
+\usepackage[ruled,vlined]{algorithm2e} % シンプルな線を追加
+\SetAlgoNlRelativeSize{-1} % 番号を少し小さくする
+\SetAlgoNoEnd % `End` を省略
+\SetKwInput{KwInput}{Input}   % "Input" のラベル変更
+\SetKwInput{KwOutput}{Output} % "Output" のラベル変更
 
 % === 数式環境 ===
 \usepackage{amsthm,amsmath,amssymb}
@@ -69,6 +79,25 @@
 
 \section*{序論}
 池辺らは...\cite{Ikebe2016-sg}
+
+\begin{algorithm}
+\caption{シンプルなアルゴリズム}
+\KwInput{データ $X$}
+\KwOutput{結果 $Y$}
+$Y \gets 0$\;
+\For{各 $x \in X$}{
+    \If{$x > 0$}{
+        $Y \gets Y + x$\;
+    }
+}
+\Return $Y$\;
+\end{algorithm}
+
+
+\begin{verbatim}
+def hello():
+    print("Hello, world!")
+\end{verbatim}
 
 \begin{dfn}[コーシー列]
 任意の $\epsilon > 0$ に対し、ある $n_0 \in \mathbb{N}$ が存在して、
