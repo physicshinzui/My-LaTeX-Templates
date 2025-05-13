@@ -46,19 +46,20 @@
 \usepackage{bm}
 \usepackage{cancel}  % in equation mode, use xcancel{}
 \usepackage{physics}
+
 \theoremstyle{definition} % non-italic body text in the following environment
-\newtheorem{dfn}{Definition}
-\newtheorem{thm}{Theorem}
-\newtheorem{prop}{Proposition}
-\newtheorem{lem}{Lemma}
-\newtheorem{cor}{Corollary}
-\newtheorem{ex}{Example}
-\newtheorem{exe}{Exercise}
-\newtheorem{property}{Property}
-\newtheorem{rem}{Remark}
-\newtheorem{fact}{Fact}
-\newtheorem{res}{Result}
-\newtheorem{req}{Requirement}
+\newtheorem{dfn}{Definition}[section]
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{prop}{Proposition}[section]
+\newtheorem{lem}{Lemma}[section]
+\newtheorem{cor}{Corollary}[section]
+\newtheorem{ex}{Example}[section]
+\newtheorem{exe}{Exercise}[section]
+\newtheorem{property}{Property}[section]
+\newtheorem{rem}{Remark}[section]
+\newtheorem{fact}{Fact}[section]
+\newtheorem{res}{Result}[section]
+\newtheorem{req}{Requirement}[section]
 
 % ================================================================
 \title{Simple Template}
@@ -77,7 +78,7 @@
 This is the abstract of the paper. It provides a brief summary of the research, including the problem, methods, results, and conclusions.
 \end{abstract}
 
-\section*{Introduction}
+\section{Introduction}
 Ikebe et al. conducted...\cite{Ikebe2016-sg}
 
 \begin{algorithm}

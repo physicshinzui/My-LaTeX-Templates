@@ -44,20 +44,57 @@
 \usepackage{cancel}  % 数式の取り消し線
 \usepackage{physics}
 
+% enumerate env
+\usepackage{enumitem}
+%\setlist[enumerate,1]{leftmargin=10pt, labelsep=10pt,label=\textit{\roman*}.}
+\setlist[enumerate,1]{labelsep=10pt, label=\Roman*.}
+
+%=======For mdframe patch=======
+% This is for skipbelow, which does not work in pure mdframe
+\usepackage{mdframed} 
+\usepackage{xpatch} % 
+
+\makeatletter
+\xpatchcmd{\endmdframed}
+  {\aftergroup\endmdf@trivlist\color@endgroup}
+  {\endmdf@trivlist\color@endgroup\@doendpe}
+  {}{}
+\makeatother
+
+
+
 % === 定理環境（和文表記） ===
 \theoremstyle{definition}
-\newtheorem{dfn}{定義}
-\newtheorem{thm}{定理}
-\newtheorem{prop}{命題}
-\newtheorem{lem}{補題}
-\newtheorem{cor}{系}
-\newtheorem{ex}{例}
-\newtheorem{exe}{演習}
-\newtheorem{property}{性質}
-\newtheorem{rem}{注意}
-\newtheorem{fact}{事実}
-\newtheorem{res}{結果}
-\newtheorem{req}{要請}
+
+\theoremstyle{definition}
+\newtheorem{dfn}{定義}[section]
+\surroundwithmdframed[linewidth=1pt,skipabove=0.5\baselineskip,skipbelow=0.5\baselineskip]{dfn}
+
+\newtheorem{thm}{定理}[section]
+\surroundwithmdframed[linewidth=1pt,skipabove=0.5\baselineskip,skipbelow=0.5\baselineskip]{thm}
+
+\newtheorem{prop}{命題}[section]
+\surroundwithmdframed[linewidth=1pt,skipabove=0.5\baselineskip,skipbelow=0.5\baselineskip]{prop}
+
+\newtheorem{lem}{補題}[section]
+\surroundwithmdframed[linewidth=1pt,skipabove=0.5\baselineskip,skipbelow=0.5\baselineskip]{lem}
+
+\newtheorem{cor}{系}[section]
+\surroundwithmdframed[linewidth=1pt,skipabove=0.5\baselineskip,skipbelow=0.5\baselineskip]{cor}
+
+\newtheorem{ex}{例}[section]
+\newtheorem{exe}{演習}[section]
+\newtheorem{property}{性質}[section]
+\newtheorem{rem}{注意}[section]
+\newtheorem{fact}{事実}[section]
+
+\newtheorem{res}{結果}[section]
+\surroundwithmdframed[linewidth=1pt,skipabove=0.5\baselineskip,skipbelow=0.5\baselineskip]{res}
+
+\newtheorem{req}{要請}[section]
+
+\newtheorem{q}{よくある疑問}[section]
+\surroundwithmdframed[linewidth=1pt,skipabove=0.5\baselineskip,skipbelow=0.5\baselineskip]{q}
 
 % ================================================================
 \title{日本語テンプレート}
@@ -115,10 +152,6 @@ Na > b
 \]
 を満たす。
 \end{thm}
-
-\begin{align}
-y=ax
-\end{align}
 
 \begin{figure}[htbp]
     \centering
